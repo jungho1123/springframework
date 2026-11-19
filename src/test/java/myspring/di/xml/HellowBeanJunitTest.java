@@ -1,11 +1,11 @@
 package myspring.di.xml;
-
-import org.junit.jupiter.api.Assertions;
+// Assertions 클래스의 모든 static 메서드를 임포트 한다 .
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
+
 import org.springframework.context.support.GenericXmlApplicationContext;
-import org.springframework.core.io.ClassPathResource;
+
 
 public class HellowBeanJunitTest {
     @Test //이걸 반드시 붙여야함
@@ -23,7 +23,7 @@ public class HellowBeanJunitTest {
         // 2개의 hello bean의 주소 비교
         System.out.println(hello == helloByType);
         // 메서드 사용해서 비교
-        Assertions.assertSame(hello,helloByType);
+        assertSame(hello,helloByType);
         // 여기서 무엇을 알 수 있느냐
 
     }
