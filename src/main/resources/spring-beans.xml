@@ -6,7 +6,7 @@
 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
         <bean id="strPrinter" class="myspring.di.xml.StringPrinter" />
         <bean id="conPrinter" class="myspring.di.xml.ConsolePrinter" />
-        <bean id="hello" class="myspring.di.xml.Hello">
+        <bean id="hello" class="myspring.di.xml.Hello" scope="prototype">
                 <property name="name" value="스프링" /> <!-- setName("스프릥")-->
                 <property name="printer" ref="strPrinter" />
         </bean>

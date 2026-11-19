@@ -24,7 +24,7 @@ public class HellowBeanJunitTest {
         System.out.println(hello == helloByType);
         // 메서드 사용해서 비교
         assertSame(hello,helloByType);
-        // 여기서 무엇을 알 수 있느냐
+        //
 
     }
 }
