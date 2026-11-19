@@ -24,7 +24,13 @@ public class HellowBeanJunitTest {
         System.out.println(hello == helloByType);
         // 메서드 사용해서 비교
         assertSame(hello,helloByType);
-        //
+        //setName() 인젝션 검증하기
+        assertEquals("Hello 스프링",helloByType.sayHello());
+        //setPrinter() 인젝션 검증하기
+        helloByType.print();
+        // StringPrinter Bean 요청하기
+        Printer printer =beanFactory.getBean("strPrinter", Printer.class);
+        assertEquals("Hello 스프링",printer.toString());
 
     }
 }
