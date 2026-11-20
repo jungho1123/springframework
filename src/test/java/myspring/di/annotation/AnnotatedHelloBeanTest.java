@@ -48,6 +48,15 @@ public class AnnotatedHelloBeanTest {
     void hello_constructor() {
         assertEquals("Hello어노테이션생성자app.setter.name", helloBeanCons.sayHello());
         helloBeanCons.print();
+        for (String name : helloBeanCons.getNames()) {
+            System.out.println(name);
+        }
+        assertEquals(3, helloBeanCons.getNames().size());
+        assertEquals("java", helloBeanCons.getNames().get(0));
     }
 
-}
+
+
+    }
+
+
