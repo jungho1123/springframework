@@ -14,6 +14,7 @@ public class HelloBean {
     @Autowired   //
     @Qualifier("stringPrinter")
     PrinterBean printer;
+    @Value("#{'${app.nameList}'.split(',')}")
     List<String> names;
 
     public HelloBean() {
