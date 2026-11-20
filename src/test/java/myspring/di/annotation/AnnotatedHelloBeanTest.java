@@ -28,6 +28,10 @@ public class AnnotatedHelloBeanTest {
     @Autowired
     HelloBeanCons helloBeanCons;
 
+    @Autowired
+    @Qualifier("stringPrinter")
+    PrinterBean printerCons;
+
 
     @Test
     @Disabled
@@ -43,7 +47,7 @@ public class AnnotatedHelloBeanTest {
     @Test
     void hello_constructor() {
         assertEquals("Hello어노테이션생성자", helloBeanCons.sayHello());
-
+        helloBeanCons.print();
     }
 
 }
