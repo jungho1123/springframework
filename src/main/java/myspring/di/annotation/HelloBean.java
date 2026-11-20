@@ -9,7 +9,7 @@ import java.util.List;
 
 @Component
 public class HelloBean {
-    @Value("어노테이션")
+    @Value("${app.setter.name}")
     String name;
     @Autowired   //
     @Qualifier("stringPrinter")
