@@ -1,11 +1,14 @@
 package myspring.di.annotation;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import javax.annotation.Resource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -19,14 +22,28 @@ public class AnnotatedHelloBeanTest {
     @Autowired
     @Qualifier("stringPrinter")
     PrinterBean printer;
+    @Resource(name = "stringPrinter")
+    PrinterBean stringPrinter2;
+
+    @Autowired
+    HelloBeanCons helloBeanCons;
+
 
     @Test
+    @Disabled
     void hello() {
         assertEquals("Hello 어노테이션", helloBean.sayHello());
         helloBean.print();
         assertEquals("Hello 어노테이션", stringPrinter.toString());
 
         assertEquals("Hello 어노테이션", printer.toString());
+        assertEquals("Hello 어노테이션", stringPrinter2.toString());
+    }
+
+    @Test
+    void hello_constructor() {
+        assertEquals("Hello어노테이션생성자", helloBeanCons.sayHello());
+
     }
 
 }

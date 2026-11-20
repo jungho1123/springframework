@@ -15,7 +15,7 @@ public class HelloBeanCons {
 
     @Autowired
     public HelloBeanCons(
-            @Value("어노테이션 생성자") String name,
+            @Value("어노테이션생성자") String name,
             @Qualifier("stringPrinter") PrinterBean printer) {
         this.name = name;
         this.printer = printer;
