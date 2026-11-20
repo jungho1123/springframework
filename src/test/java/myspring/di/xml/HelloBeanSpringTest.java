@@ -41,4 +41,11 @@ public class HelloBeanSpringTest {
         assertEquals("Hello 생성자", hello3.sayHello());
         helloCons.print();
     }
+    @Test
+    void list(){
+        for (String s :helloCons.getNames() ) {
+            System.out.println(s);
+
+        }
+    }
 }
