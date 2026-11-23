@@ -24,4 +24,5 @@ public class HelloConfigTest {
         assertEquals("Hello 스프링",stringPrinter.toString());
 
     }
+
 }

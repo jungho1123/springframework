@@ -12,21 +12,24 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.core.env.Environment;
 
 @Configuration
-@PropertySource(value = "classpath:values.properties",encoding = "UTF-8")
+@PropertySource(value = "classpath:values.properties", encoding = "UTF-8")
 public class HelloConfig {
 
     @Autowired
     Environment env;
+
     // <bean id ="strPrinter" class ="myspring.di.xml.StringPrinter">
     @Bean
     public Printer stringPrinter() {
         return new StringPrinter();
     }
+
     //<bean id ="conPrinter" class ="myspring.di.xml.ConsolePrinter">
     @Bean
-    public Printer consolPrinter(){
+    public Printer consolPrinter() {
         return new ConsolePrinter();
     }
+
     @Bean
     @Scope(value = "singleton")
     public Hello hello() {
@@ -36,6 +39,11 @@ public class HelloConfig {
         return hello;
     }
 
+    @Bean
+    public Hello helloCons() {
+        String consName = env.getProperty("app.xmlCons.name");
+        return new Hello(consName, consolPrinter());
+    }
 
 
 }
