@@ -1,4 +1,5 @@
 package mylab.notification.di.annot;
 
-public class NotificationService {
+public interface NotificationService {
+    void sendNotification(String message);
 }

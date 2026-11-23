@@ -1,4 +1,8 @@
 package mylab.notification.di.annot;
 
-public @interface NotificationConfig {
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class NotificationConfig {
+    
 }

@@ -1,4 +1,8 @@
 package myspring.di.annotation.config;
 
-public class HelloBean {
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class HelloBeanConfig {
+
 }
