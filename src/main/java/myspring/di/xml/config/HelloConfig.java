@@ -26,7 +26,7 @@ public class HelloConfig {
 
     //<bean id ="conPrinter" class ="myspring.di.xml.ConsolePrinter">
     @Bean
-    public Printer consolPrinter() {
+    public Printer consolePrinter() {
         return new ConsolePrinter();
     }
 
@@ -42,7 +42,7 @@ public class HelloConfig {
     @Bean
     public Hello helloCons() {
         String consName = env.getProperty("app.xmlCons.name");
-        return new Hello(consName, consolPrinter());
+        return new Hello(consName, consolePrinter());
     }
 
 

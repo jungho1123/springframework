@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import javax.annotation.Resource;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(SpringExtension.class)
@@ -17,12 +19,22 @@ public class HelloConfigTest {
     Hello hello;
     @Autowired
     Printer stringPrinter;
+    @Resource(name = "helloCons")
+    Hello consolePrinter;
+
     @Test
     void hello() {
         assertEquals("Hello 스프링", hello.sayHello());
         hello.print();
-        assertEquals("Hello 스프링",stringPrinter.toString());
+        assertEquals("Hello 스프링", stringPrinter.toString());
 
     }
+
+    @Test
+    void helloCons() {
+        assertEquals("Hello 생성자", consolePrinter.sayHello());
+        consolePrinter.print();
+    }
+
 
 }
